@@ -1,4 +1,4 @@
-fetch('http://Eventmanager-ALB-709254883.ap-south-1.elb.amazonaws.com/events')
+fetch('http://Eventmanager-ALB-709254883.ap-south-1.elb.amazonaws.com')
   .then(res => res.json())
   .then(data => {
       const container = document.getElementById('events');
