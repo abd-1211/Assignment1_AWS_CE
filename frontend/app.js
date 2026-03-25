@@ -12,4 +12,5 @@ fetch('http://Eventmanager-ALB-709254883.ap-south-1.elb.amazonaws.com/events')
           `;
           container.appendChild(div);
       });
-  });
+  })
+  .catch(err => console.error("Frontend fetch error:", err));

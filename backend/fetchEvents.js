@@ -4,7 +4,11 @@ const AWS = require("aws-sdk");
 const { v4: uuidv4 } = require("uuid");
 
 // Configure AWS S3
-const s3 = new AWS.S3({ region: "ap-south-1" }); 
+const s3 = new AWS.S3({
+    region: process.env.AWS_REGION,
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
+});
 const BUCKET_NAME = "eventmanager-poster-store"; // replace with your S3 bucket name
 
 const API_KEY = process.env.API_KEY;
@@ -24,7 +28,7 @@ async function uploadImageToS3(imageUrl) {
             Key: fileName,
             Body: response.data,
             ContentType: "image/jpeg",
-            ACL: "private",
+            ACL: "public-read",
         }).promise();
 
         // Generate signed URL valid for 1 hour
@@ -34,7 +38,7 @@ async function uploadImageToS3(imageUrl) {
             Expires: 3600,
         });
 
-        return signedUrl;
+        return `https://${BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${fileName}`;
     } catch (err) {
         console.error("S3 Upload Error:", err.message);
         return null;
