@@ -1,14 +1,16 @@
-fetch('http://Eventmanager-ALB-709254883.ap-south-1.elb.amazonaws.com')
+const BASE_URL = "http://Eventmanager-ALB-709254883.ap-south-1.elb.amazonaws.com";
+
+fetch(`${BASE_URL}/events`)
   .then(res => res.json())
   .then(data => {
       const container = document.getElementById('events');
+
       data.forEach(event => {
           const div = document.createElement('div');
-          // include image from S3
           div.innerHTML = `
               <h3>${event.title}</h3>
               <p>${event.date} - ${event.venue}</p>
-              ${event.image ? `<img src="${event.image}" alt="Event Poster" width="200">` : ""}
+              <img src="${event.image}" width="200"/>
           `;
           container.appendChild(div);
       });
