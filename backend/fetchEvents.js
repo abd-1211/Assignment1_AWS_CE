@@ -43,7 +43,7 @@ async function uploadImageToS3(imageUrl) {
 
 async function getEvents() {
     try {
-        const url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${API_KEY}&countryCode=PK`;
+        const url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${API_KEY}`;
         const response = await axios.get(url);
         const data = response.data;
 
