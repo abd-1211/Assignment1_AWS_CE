@@ -4,8 +4,8 @@ const AWS = require("aws-sdk");
 const { v4: uuidv4 } = require("uuid");
 
 // Configure AWS S3
-const s3 = new AWS.S3({ region: "YOUR_REGION" }); // replace YOUR_REGION
-const BUCKET_NAME = "eventmanager-posters"; // replace with your S3 bucket name
+const s3 = new AWS.S3({ region: "ap-south-1" }); 
+const BUCKET_NAME = "eventmanager-poster-store"; // replace with your S3 bucket name
 
 const API_KEY = process.env.API_KEY;
 
