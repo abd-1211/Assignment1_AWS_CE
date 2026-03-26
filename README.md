@@ -65,7 +65,7 @@ npm install axios express dotenv
 1. Created `index.html`
 
 
-2. Created `Script.js`
+2. Created `app.js`
 
 
 ## AWS Infrastructure
