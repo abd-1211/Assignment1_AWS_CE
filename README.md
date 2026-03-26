@@ -245,7 +245,7 @@ Provides a native Linux-like terminal environment on Windows, simplifying Node.j
 
 - Complete Node.js backend and frontend setup.
 - Integrated with Ticketmaster API for live event data.
-- AWS deployment includes VPC, subnets, EC2 instances, NAT Gateway, ALB, and security groups.
+- AWS deployment includes VPC, subnets, EC2 instances, NAT Gateway, ALB, security groups and S3.
 - Application is load-balanced, highly available, and secure.
 
 
