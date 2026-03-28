@@ -10,7 +10,7 @@ fetch(`${BASE_URL}/events`)
           div.innerHTML = `
               <h3>${event.title}</h3>
               <p>${event.date} - ${event.venue}</p>
-              <img src="${event.image}" width="200"/>
+              <img src="${event.image}" alt="Event Image"/>
           `;
           container.appendChild(div);
       });
