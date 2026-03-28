@@ -28,7 +28,7 @@ async function uploadImageToS3(imageUrl) {
             Key: fileName,
             Body: response.data,
             ContentType: "image/jpeg",
-            ACL: "public-read",
+            
         }).promise();
 
         // Generate signed URL valid for 1 hour
